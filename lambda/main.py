@@ -10,7 +10,7 @@ def lambda_handler(event, context):
 
     client = boto3.client('cognito-idp')
 
-    user_pool_id = 'sa-east-1_Vk8Ngd5Iy'  
+    user_pool_id = 'sa-east-1_xEApzyriv'  
     matricula_field = 'preferred_username'
 
     try:
