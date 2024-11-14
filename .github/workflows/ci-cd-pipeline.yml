@@ -79,7 +79,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: "sa-east-1"
         run: |
-          aws s3 cp lambda_funcionarios.zip s3://fonte-codigo-lambda-authorizer/lambda_funcionarios.zip
+          aws s3 cp lambda_funcionarios.zip s3://fonte-lambda-authorizer/lambda_funcionarios.zip
 
       - name: Update Lambda Function Code
         env:
@@ -87,7 +87,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: "sa-east-1"
         run: |
-          aws lambda update-function-code --function-name lambda_authorizer_funcionarios --s3-bucket fonte-codigo-lambda-authorizer --s3-key lambda_funcionarios.zip
+          aws lambda update-function-code --function-name lambda_authorizer_funcionarios --s3-bucket fonte-lambda-authorizer --s3-key lambda_funcionarios.zip
 
   post_actions:
     runs-on: ubuntu-latest
